@@ -1,0 +1,12 @@
+@use 'tokens' as t;
+
+body {
+  margin: 0;
+  background: t.$color-surface;
+  font-family: Inter, 'Segoe UI', sans-serif;
+}
+
+mat-card {
+  border-radius: t.$radius-md;
+}
+

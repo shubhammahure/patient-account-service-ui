@@ -1,0 +1,15 @@
+export * from './admission.service';
+import { AdmissionService } from './admission.service';
+export * from './authentication.service';
+import { AuthenticationService } from './authentication.service';
+export * from './health.service';
+import { HealthService } from './health.service';
+export * from './pFEWorkflow.service';
+import { PFEWorkflowService } from './pFEWorkflow.service';
+export * from './pathToPayment.service';
+import { PathToPaymentService } from './pathToPayment.service';
+export * from './patient.service';
+import { PatientService } from './patient.service';
+export * from './transfer.service';
+import { TransferService } from './transfer.service';
+export const APIS = [AdmissionService, AuthenticationService, HealthService, PFEWorkflowService, PathToPaymentService, PatientService, TransferService];
