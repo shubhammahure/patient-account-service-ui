@@ -1,0 +1,17 @@
+services:
+  # Rancher Desktop override for both Moby and containerd/nerdctl modes.
+  patient-account-service-ui-dev:
+    environment:
+      # For Rancher Desktop, this host usually resolves correctly from containers.
+      BACKEND_URL: ${BACKEND_URL:-http://host.rancher-desktop.internal:8080}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "host.rancher-desktop.internal:host-gateway"
+      - "host.containers.internal:host-gateway"
+
+  patient-account-service-ui:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "host.rancher-desktop.internal:host-gateway"
+      - "host.containers.internal:host-gateway"
+

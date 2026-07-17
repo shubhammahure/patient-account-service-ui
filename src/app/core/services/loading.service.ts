@@ -1,8 +1,9 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class LoadingService {
   readonly activeRequests = signal(0);
+  readonly isLoading = computed(() => this.activeRequests() > 0);
 
   start(): void {
     this.activeRequests.update((value) => value + 1);
@@ -11,5 +12,8 @@ export class LoadingService {
   stop(): void {
     this.activeRequests.update((value) => Math.max(0, value - 1));
   }
-}
 
+  reset(): void {
+    this.activeRequests.set(0);
+  }
+}

@@ -4,12 +4,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:proxy": "ng serve --proxy-config proxy.conf.json",
+    "proxy:generate": "node scripts/generate-proxy.mjs",
+    "start:proxy": "npm run proxy:generate && ng serve --host 0.0.0.0 --port 4200 --proxy-config proxy.generated.json",
+    "build:development": "ng build --configuration development",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false",
-    "openapi:generate": "openapi-generator-cli generate -i openapi/openapi.json -g typescript-angular -o src/app/core/api/generated --additional-properties=providedInRoot=true,stringEnums=true,ngVersion=22.0.0",
-    "openapi:clean": "node -e \"const fs=require('fs');fs.rmSync('src/app/core/api/generated',{recursive:true,force:true});\""
+    "api:clean": "node -e \"const fs=require('fs');fs.rmSync('src/app/core/api/generated',{recursive:true,force:true});\"",
+    "api:generate": "npm run api:clean && openapi-generator-cli generate -i openapi/openapi.json -g typescript-angular -o src/app/core/api/generated -c openapi/generator-config.json --global-property apis,models,supportingFiles",
+    "openapi:clean": "npm run api:clean",
+    "openapi:generate": "npm run api:generate"
   },
   "private": true,
   "packageManager": "npm@11.13.0",
@@ -23,6 +27,9 @@
     "@angular/material": "^22.0.0",
     "@angular/platform-browser": "^22.0.0",
     "@angular/router": "^22.0.0",
+    "@ngrx/signals": "^21.1.1",
+    "chart.js": "^4.5.1",
+    "ng2-charts": "^8.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

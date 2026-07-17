@@ -1,0 +1,10 @@
+{
+  "ngVersion": "22.0.0",
+  "providedInRoot": true,
+  "stringEnums": true,
+  "withInterfaces": true,
+  "modelPropertyNaming": "original",
+  "enumPropertyNaming": "original",
+  "fileNaming": "camelCase"
+}
+

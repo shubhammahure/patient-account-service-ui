@@ -4,4 +4,7 @@ dist
 coverage
 .vscode
 .angular
+npm-debug.log
+.idea
+target
 

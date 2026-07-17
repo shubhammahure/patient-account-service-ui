@@ -1,0 +1,40 @@
+
+> patient-account-service-ui@0.0.0 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names                     |  Raw size | Estimated transfer size
+main-6AOVNI2K.js    | main                      | 886.15 kB |               188.97 kB
+styles-3GLODXFP.css | styles                    | 132.65 kB |                 7.90 kB
+
+                    | Initial total             |   1.02 MB |               196.87 kB
+
+Lazy chunk files    | Names                     |  Raw size | Estimated transfer size
+chunk-SgJxcTNt.js   | dashboard-page            | 266.89 kB |                74.78 kB
+chunk-DLgaoPDj.js   | bulk-transfer-page        |  97.89 kB |                18.91 kB
+chunk-B4kNHCAS.js   | browser                   |  68.45 kB |                17.92 kB
+chunk-DNiyzGjA.js   | -                         |  43.80 kB |                 9.39 kB
+chunk-CzZh0mKH.js   | -                         |  36.91 kB |                 8.18 kB
+chunk-DUA8o-iO.js   | -                         |  29.03 kB |                 6.86 kB
+chunk-CezM6AYk.js   | payment-case-details-page |  27.97 kB |                 6.09 kB
+chunk-BX3vXyww.js   | settings-page             |  26.73 kB |                 4.77 kB
+chunk-BP5FBXOo.js   | pfe-workflow-page         |  23.14 kB |                 6.16 kB
+chunk-DKpZyxZb.js   | -                         |  21.79 kB |                 5.35 kB
+chunk-30-hHH3P.js   | admissions-page           |  15.64 kB |                 4.35 kB
+chunk-DkSSvGbb.js   | bulk-upload-page          |  14.60 kB |                 4.35 kB
+chunk-MchbIz84.js   | payment-cases-page        |  14.01 kB |                 3.90 kB
+chunk-CjuuzHxq.js   | patients-page             |  10.85 kB |                 3.39 kB
+chunk-Dwh_Yaf9.js   | patient-details-page      |   6.81 kB |                 2.22 kB
+...and 10 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [10.291 seconds] - 2026-07-15T06:16:04.502Z
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mbundle initial exceeded maximum budget. Budget 1.00 MB was not met by 18.80 kB with a total of 1.02 MB.[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mangular:styles/component:scss;5ee7fa43034b0ce781ad9390d9556e3bded3232907d7fc03f99404d1b30672c4;C:/Users/ShubhamMahure/Bench_Project/patient-account-service/patient-account-service-ui/src/app/layout/shell.component.ts exceeded maximum budget. Budget 6.00 kB was not met by 146 bytes with a total of 6.15 kB.[0m
+
+
+Output location: C:\Users\ShubhamMahure\Bench_Project\patient-account-service\patient-account-service-ui\dist\patient-account-service-ui
+

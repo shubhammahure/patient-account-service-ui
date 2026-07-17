@@ -1,0 +1,54 @@
+/* Enterprise healthcare typography scale */
+
+h1,
+.h1 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: var(--line-tight);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+h2,
+.h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--line-tight);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+h3,
+.h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--line-tight);
+  margin: 0;
+}
+
+h4,
+.h4 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: var(--line-normal);
+  margin: 0;
+}
+
+.text-xs { font-size: var(--text-xs); line-height: var(--line-normal); }
+.text-sm { font-size: var(--text-sm); line-height: var(--line-normal); }
+.text-md { font-size: var(--text-md); line-height: var(--line-normal); }
+.text-lg { font-size: var(--text-lg); line-height: var(--line-normal); }
+.text-xl { font-size: var(--text-xl); line-height: var(--line-tight); }
+
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+.text-muted { color: var(--color-text-2); }
+.text-subtle { color: var(--color-text-3); }
+.text-primary { color: var(--color-primary); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+

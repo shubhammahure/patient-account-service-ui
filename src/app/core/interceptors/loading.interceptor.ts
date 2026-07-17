@@ -5,6 +5,13 @@ import { LoadingService } from '../services/loading.service';
 
 export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
   const loading = inject(LoadingService);
+  if (req.headers.get('X-Skip-Loading') === 'true') {
+    const withoutControlHeader = req.clone({
+      headers: req.headers.delete('X-Skip-Loading'),
+    });
+    return next(withoutControlHeader);
+  }
+
   loading.start();
   return next(req).pipe(finalize(() => loading.stop()));
 };

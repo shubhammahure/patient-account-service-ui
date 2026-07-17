@@ -1,0 +1,111 @@
+@use 'sass:map';
+
+/* Reusable utility classes (Angular Material project, no Bootstrap) */
+
+$spacing-scale: (
+  0: var(--space-0),
+  1: var(--space-1),
+  2: var(--space-2),
+  3: var(--space-3),
+  4: var(--space-4),
+  5: var(--space-5),
+  6: var(--space-6),
+  8: var(--space-8),
+  10: var(--space-10),
+  12: var(--space-12),
+  16: var(--space-16),
+);
+
+$breakpoints: (
+  xs: 480px,
+  sm: 600px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+@mixin up($name) {
+  $value: map.get($breakpoints, $name);
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+/* Layout */
+.d-block { display: block !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+.d-none { display: none !important; }
+
+.flex-row { flex-direction: row !important; }
+.flex-col { flex-direction: column !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.items-center { align-items: center !important; }
+.items-start { align-items: flex-start !important; }
+.items-end { align-items: flex-end !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-center { justify-content: center !important; }
+.justify-end { justify-content: flex-end !important; }
+
+.w-full { width: 100% !important; }
+.h-full { height: 100% !important; }
+
+/* Spacing */
+@each $k, $v in $spacing-scale {
+  .m-#{$k} { margin: $v !important; }
+  .mt-#{$k} { margin-top: $v !important; }
+  .mr-#{$k} { margin-right: $v !important; }
+  .mb-#{$k} { margin-bottom: $v !important; }
+  .ml-#{$k} { margin-left: $v !important; }
+  .mx-#{$k} { margin-left: $v !important; margin-right: $v !important; }
+  .my-#{$k} { margin-top: $v !important; margin-bottom: $v !important; }
+
+  .p-#{$k} { padding: $v !important; }
+  .pt-#{$k} { padding-top: $v !important; }
+  .pr-#{$k} { padding-right: $v !important; }
+  .pb-#{$k} { padding-bottom: $v !important; }
+  .pl-#{$k} { padding-left: $v !important; }
+  .px-#{$k} { padding-left: $v !important; padding-right: $v !important; }
+  .py-#{$k} { padding-top: $v !important; padding-bottom: $v !important; }
+
+  .gap-#{$k} { gap: $v !important; }
+}
+
+/* Radius + shadows */
+.rounded-xs { border-radius: var(--radius-xs) !important; }
+.rounded-sm { border-radius: var(--radius-sm) !important; }
+.rounded-md { border-radius: var(--radius-md) !important; }
+.rounded-lg { border-radius: var(--radius-lg) !important; }
+.rounded-xl { border-radius: var(--radius-xl) !important; }
+
+.shadow-xs { box-shadow: var(--shadow-xs) !important; }
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.shadow-lg { box-shadow: var(--shadow-lg) !important; }
+
+/* Surface + text utilities */
+.bg-base { background: var(--color-bg) !important; }
+.bg-surface { background: var(--color-surface) !important; }
+.bg-surface-2 { background: var(--color-surface-2) !important; }
+.bg-surface-3 { background: var(--color-surface-3) !important; }
+.border-base { border: 1px solid var(--color-border) !important; }
+
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+/* Responsive display utilities */
+@each $bp, $value in $breakpoints {
+  @include up($bp) {
+    .d-#{$bp}-none { display: none !important; }
+    .d-#{$bp}-block { display: block !important; }
+    .d-#{$bp}-flex { display: flex !important; }
+    .d-#{$bp}-grid { display: grid !important; }
+  }
+}
+
+
